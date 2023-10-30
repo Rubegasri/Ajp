@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            body{
+        
+        background-image: url(succc.jpg);
+          background-repeat:no-repeat;
+          background-attachment:fixed;  
+          background-size:cover;
+          
+            }
+    
+        
+    
+    </style>
+    </head>
+    <body> 
+        <h2 style="color: #f5f5dc;font-size: medium;text-align: center;font-style: italic;font-size: 300%;">Order Successfull </h2><br><br><br>
+        <br><br><br><br><br><h4 style="color:azure ;text-align: center;font-size: 150%;">
+        Name: <span th:text="${frm.name}"></span><br>
+        E-mail:<span th:text="${frm.mail}"></span><br>
+        Password:<span th:text="${frm.pass}"></span><br>
+        DOB:<span th:text="${frm.dad}"></span><br>
+        Delivery:<span th:text="${frm.deli}"></span><br>
+        Coffee:<span th:text="${frm.quan}"></span><br>
+        Topings or preparation instruction:<span th:text="${frm.fd}"></span><br>
+    </h4>
+      
+    </body>
+</html>
