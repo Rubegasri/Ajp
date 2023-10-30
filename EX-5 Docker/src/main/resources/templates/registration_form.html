@@ -1,0 +1,45 @@
+<html xmlns:th="http:www.thymeleaf.org">
+    <head>
+        <style>
+            body{
+        
+        background-image: url(log.jpg);
+          background-repeat:no-repeat;
+          background-attachment:fixed;  
+          background-size:cover;
+          
+            }
+    
+        
+    
+    </style>
+        
+        <title >
+           Registration form
+        </title>
+        
+     </head>
+    <body>
+        <h1 style="color: beige;font-family: Georgia, 'Times New Roman', Times, serif;font-size: 300%;text-align: center;">Order Page</h1>
+        <br><br><br><br><br><br>
+        
+        <form th:action="@{/registersucc}" method="post" th:object="${frm}" style="text-align: center;color: antiquewhite;">
+            Name:<input type="text" th:field="*{name}"><br><br><br>
+            E-mail:<input type="text" th:field="*{mail}"><br><br><br>
+            Password:<input type="password" th:field="*{pass}"><br><br><br>
+            Date of Delivery:<input type="date" th:field="*{dad}"><br><br><br>
+            Delivery:<input type="radio" th:field="*{deli}" value="Pickup">Pickup
+            <input type="radio" th:field="*{deli}" value="Delivery">Delivery <br><br><br>
+            Coffee:<input list="size" th:field="*{quan}">
+            <datalist id="size">
+                <option value="Cold Coffee"></option>
+                <option value="Iced Americano"></option>
+                <option value="Latte"></option>
+                <option value="Erripso"></option>
+                <option value="Cappucino"></option>
+            </datalist><br><br><br>
+            Topings or preparation instruction:<textarea rows="3" cols="20" th:field="*{fd}"></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
