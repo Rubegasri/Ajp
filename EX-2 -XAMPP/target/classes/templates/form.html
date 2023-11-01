@@ -1,0 +1,51 @@
+<html xmlns:th="http.www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <style>
+    body{
+      background-image: url("https://static.vecteezy.com/system/resources/previews/006/656/786/large_2x/blur-background-at-wooden-style-restaurant-and-cafe-with-people-free-photo.jpg");
+  background-repeat:no-repeat;
+  background-attachment:fixed;  
+  background-size:cover;
+  
+    }
+   </style>
+  </head>
+  <body>
+    
+    <center>
+    <h1 style="color: aliceblue;font-family: cursive;font-size:250%;">Order Page</h1>
+    <form th:action="@{/save}" th:method="post" th:object="${user}" style="font-family: fantasy;color: antiquewhite;">
+      <div>Name</div>
+
+      <input type="hidden" th:field="*{id}" />
+      <input type="text" th:field="*{name}" /><br><br>
+
+       <div>E-mail</div>
+      <input type="text" th:field="*{mail}"/><br><br>
+      <div>Password:</div>
+      <input type="password" th:field="*{pass}"/><br><br>
+      <div>Date of Delivery:</div>
+      <input type="date" th:field="*{da}"/><br><br>
+      <div>Delivery:</div>
+      <input type="checkbox" th:field="*{deli}"  name="Pickup" value="Pickup">Pickup</input><br>
+      <input type="checkbox"  th:field="*{deli}" name="Pickup" value="Deli">Delivery</input><br><br><br>  
+       Coffee:<input list="size" th:field="*{quan}">
+      <datalist id="size">
+          <option value="Cold Coffee"></option>
+          <option value="Iced Americano"></option>
+          <option value="Latte"></option>
+          <option value="Erripso"></option>
+          <option value="Cappucino"></option>
+      </datalist><br><br><br>
+      Topings or preparation instruction:<textarea rows="3" cols="20" th:field="*{fd}"></textarea><br><br>
+      <input type="submit" value="Add User"/> 
+      <input type="submit" value="Delete"><a th:href="@{'delete/user'+ ${user.id}}"></a>
+      <input type="submit" value="Update"><a th:href="@{'update/user'+ ${user.id}}"></a>
+    </form>
+  </center>
+    </body>
+    </html> 
